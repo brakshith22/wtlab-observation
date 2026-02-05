@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaptive Landing Page</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-red-400 text-white text-center p-6">
+        <p>ROLL NUMBER: 23311a05w6 , BADDAM RAKSHITH REDDY</p>
+        <h1 class="text-2xl font-bold">Welcome to Our Service</h1>
+        <p id="deviceType" class="mt-2 text-sm"></p>
+    </header>
+
+    <!-- Main Content -->
+    <main class="p-6 space-y-8">
+
+        <!-- Hero Section -->
+        <section id="hero" class="text-center md:text-left">
+            <h2 id="heroTitle" class="text-2xl md:text-3xl font-semibold mb-2">
+                Discover Our Solutions
+            </h2>
+            <p id="heroDescription" class="text-lg">
+                We provide top-notch solutions tailored to your needs.
+            </p>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features">
+            <h2 class="text-xl font-semibold mb-4">Features</h2>
+            <div id="featureList" class="flex flex-wrap gap-4">
+                <!-- Features inserted by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="text-xl font-semibold mb-2">Contact Us</h2>
+            <p class="mb-4">Get in touch with us for more information.</p>
+
+            <form id="contactForm" class="flex flex-col max-w-md space-y-3">
+                <label>Name:</label>
+                <input type="text" required
+                    class="p-2 border rounded">
+
+                <label>Email:</label>
+                <input type="email" required
+                    class="p-2 border rounded">
+
+                <label>Message:</label>
+                <textarea rows="4" required
+                    class="p-2 border rounded"></textarea>
+
+                <button type="submit"
+                    class="bg-red-400 text-white py-2 rounded hover:bg-red-600">
+                    Send Message
+                </button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center p-3">
+        <p>&copy; 2024 Our Service</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function detectDevice() {
+            const deviceTypeElement = document.getElementById("deviceType");
+            const featureList = document.getElementById("featureList");
+
+            if (window.innerWidth < 768) {
+                deviceTypeElement.textContent = "You are using a mobile device.";
+                featureList.innerHTML = `
+                    <div class="bg-white p-4 border rounded flex-1">Mobile Feature 1</div>
+                    <div class="bg-white p-4 border rounded flex-1">Mobile Feature 2</div>
+                `;
+            } 
+            else if (window.innerWidth < 1024) {
+                deviceTypeElement.textContent = "You are using a tablet.";
+                featureList.innerHTML = `
+                    <div class="bg-white p-4 border rounded flex-1">Tablet Feature 1</div>
+                    <div class="bg-white p-4 border rounded flex-1">Tablet Feature 2</div>
+                    <div class="bg-white p-4 border rounded flex-1">Tablet Feature 3</div>
+                `;
+            } 
+            else {
+                deviceTypeElement.textContent = "You are using a desktop.";
+                featureList.innerHTML = `
+                    <div class="bg-white p-4 border rounded flex-1">Desktop Feature 1</div>
+                    <div class="bg-white p-4 border rounded flex-1">Desktop Feature 2</div>
+                    <div class="bg-white p-4 border rounded flex-1">Desktop Feature 3</div>
+                    <div class="bg-white p-4 border rounded flex-1">Desktop Feature 4</div>
+                `;
+            }
+        }
+
+        detectDevice();
+        window.addEventListener("resize", detectDevice);
+    </script>
+
+</body>
+</html>
