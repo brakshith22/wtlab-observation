@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB - 1</title>
+
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+<div class="min-h-screen flex items-center justify-center p-4">
+    <main class="bg-white shadow-lg rounded-lg w-full max-w-3xl p-6 space-y-6">
+
+        <!-- Header -->
+        <header class="flex justify-between items-center border-b pb-4">
+            <h1 class="text-xl font-bold">
+                Semantic Elements, Media Storage, CSS & WebStorage APIs
+            </h1>
+            <button id="btn"
+                class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                Switch Theme
+            </button>
+        </header>
+
+        <!-- Article -->
+        <article>
+            <h2 class="text-lg font-semibold text-blue-600">CSE E</h2>
+            <p>Bachelor of Technology, SNIST</p>
+        </article>
+
+        <!-- Section -->
+        <section class="space-y-2">
+            <h3 class="text-lg font-semibold text-blue-600">
+                Professional Summary
+            </h3>
+            <p>An Eight Semesters Degree Program</p>
+            <p>40+ subjects, Labs, Internals, Externals, Assignments, Attendance...</p>
+            <p><span class="font-semibold">Core Subjects:</span> CN, OOPS, DBMS, OS</p>
+
+            <h4 class="text-md font-semibold text-blue-600 mt-4">
+                Tech Stack
+            </h4>
+            <p><span class="font-semibold">Frontend:</span> JavaScript, React.js</p>
+            <p><span class="font-semibold">Database:</span> MySQL, MongoDB</p>
+            <p><span class="font-semibold">Web Technologies:</span> HTML, CSS, JavaScript</p>
+            <p><span class="font-semibold">Version Control:</span> Git</p>
+        </section>
+
+        <!-- Aside -->
+        <aside class="bg-gray-100 border-l-4 border-blue-600 p-4 rounded">
+            <strong class="text-blue-600">Web Storage API Note:</strong>
+            <p id="storage-msg" class="text-sm mt-1"></p>
+        </aside>
+
+        <!-- Footer -->
+        <footer class="text-center text-sm text-gray-500 border-t pt-4">
+            &copy; 2026 WT LAB - Semantic Elements
+        </footer>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
