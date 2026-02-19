@@ -1,0 +1,49 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header & Footer */
+header,
+footer {
+    text-align: center;
+    background-color: rgb(255, 0, 0);
+    color: #fff;
+    padding: 15px;
+}
+
+/* Main */
+main {
+    padding: 20px;
+    background-color: rgb(58, 250, 0);
+    min-height: 80vh;
+}
+
+/* Loading Text */
+#loading {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+/* Table */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    background-color: #ffffff;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f801;
+    color: black;
+}
