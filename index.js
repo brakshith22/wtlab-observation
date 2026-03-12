@@ -1,46 +1,10 @@
- const EventEmitter = require("events");
- const customEmitter = new EventEmitter();
+const express = require('express'); 
+const app = express(); 
 
+const router = require('./router'); 
 
-customEmitter.on('userLogin', async (username) => {
-    console.log(`User "${username}" is logging in...`);
+app.use('/api', router);
 
-    await simulateAsyncProcess('Checking user credentials...');
-
-    console.log(`User "${username}" successfully logged in!`);
+app.listen(3000, () => {
+  console.log('Server started on port 3000');
 });
-
-customEmitter.on('sensorReading', async (sensorType, value) => {
-    console.log(`Received a reading from ${sensorType}: ${value}`);
-
-    await simulateAsyncProcess(`Processing ${sensorType} data...`);
-
-    if (sensorType === 'temperature' && value > 30) {
-        console.log('Warning: Temperature is too high!');
-    } else {
-        console.log('Sensor data processed successfully.');
-    }
-});
-
-async function simulateAsyncProcess(message) {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            console.log(message);
-            resolve();
-        }, 2000);
-    });
-}
-
-setTimeout(() => {
-    customEmitter.emit('userLogin', 'john_doe');
-}, 1000);
-
-
-setTimeout(() => {
-    customEmitter.emit('sensorReading', 'temperature', 35);
-}, 3000);
-
-
-setTimeout(() => {
-    customEmitter.emit('sensorReading', 'humidity', 50);
-}, 5000);
